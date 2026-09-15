@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard - Vivaha</title>
+  <link rel="stylesheet" href="css/customer-dashboard.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="brand">Vivaha</div>
+    <div class="nav-user">
+      <span>Kashish Varshney · Customer</span>
+      <button class="logout-btn">Log out</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Your events</h1>
+
+    <!-- Create Event Form -->
+    <section class="panel">
+      <h2>Create a new event</h2>
+      <form class="event-form">
+        <select>
+          <option>Wedding</option>
+          <option>Birthday</option>
+          <option>Corporate</option>
+          <option>Other</option>
+        </select>
+        <input type="date">
+        <input type="text" placeholder="Location">
+        <input type="number" placeholder="Budget">
+        <input type="number" placeholder="Guests">
+        <button type="submit" class="btn-maroon">Add</button>
+      </form>
+    </section>
+
+    <!-- My Events -->
+    <h3>My events</h3>
+    <div class="card-grid">
+      <div class="panel-card">
+        <strong>Wedding</strong>
+        <p class="muted">04/09/2026</p>
+        <p>Budget: ₹300000</p>
+      </div>
+    </div>
+
+    <!-- My Bookings -->
+    <h3>My bookings</h3>
+    <div class="card-grid">
+      <div class="panel-card">
+        <strong>Elegant Events Catering</strong>
+        <p class="muted">caterer</p>
+        <span class="badge badge-pending">pending</span>
+        <p>₹40000</p>
+      </div>
+    </div>
+
+    <!-- Browse Vendors -->
+    <h3>Browse vendors</h3>
+    <div class="card-grid">
+      <div class="vendor-card">
+        <h4>Royal Photography Studio</h4>
+        <p class="muted">Photographer · Agra</p>
+        <p>5 ★</p>
+        <button class="btn-maroon">Book now</button>
+      </div>
+      <div class="vendor-card">
+        <h4>Elegant Events Catering</h4>
+        <p class="muted">Caterer · Agra</p>
+        <p>0 ★</p>
+        <button class="btn-maroon">Book now</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
