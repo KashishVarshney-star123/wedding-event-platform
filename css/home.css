@@ -1192,3 +1192,164 @@ html {
 .hero-image:hover img {
     transform: scale(1.03);
 }
+
+/* ============================= */
+/* PREMIUM NAVBAR */
+/* ============================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: 0.3s ease;
+}
+
+/* Logo */
+.logo {
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: #d45a7a;
+    transform: translateY(-1px);
+}
+
+/* Navigation Links */
+.nav-links a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background-color: #d45a7a;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d45a7a;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Login */
+.login-btn {
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    color: #d45a7a;
+}
+
+/* Get Started */
+.signup-btn {
+    transition: 0.3s ease;
+}
+
+.signup-btn:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(212, 90, 122, 0.25);
+}
+
+/* ============================= */
+/* ICON HOVER ANIMATION */
+/* ============================= */
+
+.service-icon,
+.why-icon,
+.step-number,
+.user-avatar {
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: rotate(8deg) scale(1.08);
+}
+
+.why-card:hover .why-icon {
+    transform: scale(1.08) rotate(5deg);
+}
+
+.step-card:hover .step-number {
+    transform: scale(1.08);
+}
+
+.testimonial-card:hover .user-avatar {
+    transform: scale(1.08);
+}
+
+/* ============================= */
+/* FINAL CTA */
+/* ============================= */
+
+.final-cta {
+    padding: 100px 8%;
+    background-color: #fff5f7;
+}
+
+.cta-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 75px 50px;
+    text-align: center;
+    background-color: #d45a7a;
+    border-radius: 22px;
+    color: white;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cta-content:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.14);
+}
+
+.cta-content > span {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.cta-content h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 10px 0 18px;
+}
+
+.cta-content p {
+    max-width: 600px;
+    margin: 0 auto 32px;
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.92;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: white;
+    color: #d45a7a;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
