@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Work Sans', "Segoe UI", sans-serif;
+  min-height: 100vh;
+  background: #FBF6EE;
+  color: #2B2320;
+}
+
+h1, h2, .brand {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+/* ---------- PAGE ---------- */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.circle.one {
+  width: 420px;
+  height: 420px;
+  background: #E8D5A8;
+  top: -180px;
+  left: -150px;
+  opacity: 0.5;
+}
+
+.circle.two {
+  width: 330px;
+  height: 330px;
+  background: #F3E7DC;
+  bottom: -160px;
+  right: -120px;
+  opacity: 0.6;
+}
+
+/* ---------- CARD ---------- */
+.auth-card {
+  width: min(100%, 1050px);
+  min-height: 650px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 25px 70px rgba(107, 31, 42, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- LEFT SIDE (HERO) ---------- */
+.hero {
+  position: relative;
+  min-height: 650px;
+  padding: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FBF6EE;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(74, 20, 29, 0.55), rgba(74, 20, 29, 0.75)),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80")
+    center / cover;
+}
+
+.brand {
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.hero-content {
+  max-width: 430px;
+}
+
+.hero-content .small-text {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  color: #E8D5A8;
+}
+
+.hero-content h1 {
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 390px;
+  opacity: 0.92;
+}
+
+.heart {
+  font-size: 28px;
+  margin-top: 25px;
+  color: #E8D5A8;
+}
+
+/* ---------- RIGHT SIDE (FORM) ---------- */
+.form-section {
+  padding: 55px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-header {
+  margin-bottom: 26px;
+}
+
+.form-header h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #2B2320;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  color: #6B5F58;
+  font-size: 14px;
+}
+
+/* Hide radios; used only to drive CSS tab logic */
+.tab-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Default (Login) state */
+.header-signup { display: none; }
+.header-login { display: block; }
+#signupForm { display: none; }
+#loginForm { display: block; }
+
+/* When Sign Up radio is checked, flip visibility */
+#tabSignup:checked ~ .header-login { display: none; }
+#tabSignup:checked ~ .header-signup { display: block; }
+#tabSignup:checked ~ .forms #loginForm { display: none; }
+#tabSignup:checked ~ .forms #signupForm { display: block; }
+
+/* ---------- TABS ---------- */
+.tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #F3E7DC;
+  margin-bottom: 28px;
+}
+
+.tab {
+  padding: 0 0 13px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #A69691;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-login-label { color: #6B1F2A; }
+.tab-login-label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #6B1F2A;
+  border-radius: 5px;
+}
+
+#tabSignup:checked ~ .tabs .tab-login-label {
+  color: #A69691;
+}
+#tabSignup:checked ~ .tabs .tab-login-label::after {
+  background: transparent;
+}
+#tabSignup:checked ~ .tabs .tab-signup-label {
+  color: #6B1F2A;
+  position: relative;
+}
+#tabSignup:checked ~ .tabs .tab-signup-label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #6B1F2A;
+  border-radius: 5px;
+}
+
+/* ---------- FORM FIELDS ---------- */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #594541;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper span {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #A99590;
+  font-size: 15px;
+}
+
+.input-group input,
+.role-select {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #F3E7DC;
+  border-radius: 8px;
+  padding: 0 15px 0 43px;
+  font-size: 14px;
+  outline: none;
+  color: #2B2320;
+  background: #FFFDFC;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.role-select {
+  padding-left: 15px;
+}
+
+.input-group input:focus,
+.role-select:focus {
+  border-color: #6B1F2A;
+  box-shadow: 0 0 0 3px rgba(107, 31, 42, 0.12);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6B5F58;
+  font-size: 13px;
+}
+
+.remember input {
+  accent-color: #6B1F2A;
+}
+
+.forgot {
+  color: #6B1F2A;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* ---------- BUTTON ---------- */
+.submit-btn {
+  width: 100%;
+  height: 50px;
+  margin-top: 22px;
+  border: none;
+  border-radius: 8px;
+  background: #6B1F2A;
+  color: #FBF6EE;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #4A141D;
+}
+
+/* ---------- TERMS ---------- */
+.terms {
+  margin-top: 18px;
+  color: #998783;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.terms a {
+  color: #6B1F2A;
+  text-decoration: none;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 850px) {
+  .auth-card {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+  }
+  .hero {
+    min-height: 300px;
+    padding: 35px;
+  }
+  .hero-content h1 {
+    font-size: 42px;
+  }
+  .form-section {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .page { padding: 15px; }
+  .auth-card { border-radius: 10px; }
+  .hero { min-height: 260px; padding: 28px; }
+  .hero-content h1 { font-size: 34px; }
+  .hero-content p { font-size: 13px; }
+  .brand { font-size: 24px; }
+  .form-section { padding: 30px 24px; }
+  .form-header h2 { font-size: 28px; }
+}
