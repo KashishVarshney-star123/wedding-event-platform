@@ -1,0 +1,431 @@
+/* =====================================
+   WEDVISTA SIGNUP PAGE
+   ===================================== */
+
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* BODY */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #faf7f0;
+
+    color: #252525;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   NAVIGATION
+   ===================================== */
+
+.navbar {
+    width: 100%;
+
+    background-color: #faf7f0;
+
+    border-bottom: 1px solid #e6dfd4;
+}
+
+
+.nav-container {
+    width: 88%;
+
+    max-width: 1350px;
+
+    min-height: 66px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    color: #6f1d2b;
+
+    text-decoration: none;
+
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+
+    gap: 35px;
+}
+
+
+.nav-links a {
+    color: #403b38;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover {
+    color: #6f1d2b;
+}
+
+
+/* RIGHT SIDE */
+
+.nav-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #77716d;
+
+    font-size: 13px;
+}
+
+
+.login-link {
+    color: #6f1d2b;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   SIGNUP SECTION
+   ===================================== */
+
+.signup-section {
+    min-height: calc(100vh - 120px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 20px;
+}
+
+
+/* =====================================
+   SIGNUP CARD
+   ===================================== */
+
+.signup-card {
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 42px;
+
+    background-color: white;
+
+    border: 1px solid #e3dbd0;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 35px rgba(50, 30, 20, 0.08);
+}
+
+
+/* =====================================
+   HEADING
+   ===================================== */
+
+.signup-heading {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.small-heading {
+    color: #6f1d2b;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+.signup-heading h1 {
+    font-family: Georgia, serif;
+
+    color: #252525;
+
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+
+.signup-heading p:last-child {
+    color: #77716d;
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   FORM
+   ===================================== */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    color: #403b38;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 10px 14px;
+
+    border: 1px solid #d8d0c5;
+
+    border-radius: 5px;
+
+    background-color: white;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.form-group input::placeholder {
+    color: #aaa39d;
+}
+
+
+.form-group input:focus {
+    border-color: #6f1d2b;
+
+    box-shadow:
+        0 0 5px rgba(111, 29, 43, 0.15);
+}
+
+
+/* =====================================
+   TERMS
+   ===================================== */
+
+.terms {
+    margin-top: 5px;
+
+    margin-bottom: 22px;
+
+    color: #77716d;
+
+    font-size: 13px;
+}
+
+
+.terms label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.terms input {
+    accent-color: #6f1d2b;
+}
+
+
+/* =====================================
+   SIGNUP BUTTON
+   ===================================== */
+
+.signup-button {
+    width: 100%;
+
+    height: 49px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background-color: #6f1d2b;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+
+.signup-button:hover {
+    background-color: #541521;
+}
+
+
+/* =====================================
+   LOGIN LINK
+   ===================================== */
+
+.bottom-login {
+    text-align: center;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eee7dc;
+}
+
+
+.bottom-login p {
+    display: inline;
+
+    color: #77716d;
+
+    font-size: 13px;
+}
+
+
+.bottom-login a {
+    margin-left: 5px;
+
+    color: #6f1d2b;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.bottom-login a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   FOOTER
+   ===================================== */
+
+footer {
+    padding: 15px;
+
+    border-top: 1px solid #e6dfd4;
+
+    background-color: #faf7f0;
+
+    color: #88817b;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+
+/* =====================================
+   RESPONSIVE
+   ===================================== */
+
+@media screen and (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .signup-card {
+        max-width: 480px;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .nav-container {
+        width: 92%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-right span {
+        display: none;
+    }
+
+    .signup-section {
+        padding: 35px 18px;
+    }
+
+    .signup-card {
+        padding: 30px 22px;
+    }
+
+    .signup-heading h1 {
+        font-size: 29px;
+    }
+
+}
