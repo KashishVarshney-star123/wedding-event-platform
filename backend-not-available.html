@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WedVista | Backend Unavailable</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #FBF6EE;
+            font-family: "DM Sans", sans-serif;
+            color: #292929;
+        }
+
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 8%;
+            gap: 70px;
+        }
+
+        /* LEFT SIDE */
+
+        .error-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .brand {
+            color: #6B1F2A;
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 80px;
+        }
+
+        .error-tag {
+            display: inline-block;
+            color: #6B1F2A;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .error-content h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 58px;
+            line-height: 1.08;
+            color: #6B1F2A;
+            margin-bottom: 20px;
+        }
+
+        .error-content p {
+            max-width: 520px;
+            color: #707070;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 25px;
+            background-color: #6B1F2A;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #54151f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(107, 31, 42, 0.22);
+        }
+
+        /* RIGHT SIDE IMAGE */
+
+        .error-image {
+            flex: 1;
+            max-width: 480px;
+            position: relative;
+        }
+
+        .error-image img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .image-label {
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            background-color: white;
+            padding: 13px 18px;
+            border-radius: 10px;
+            color: #6B1F2A;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .error-page {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 6%;
+            }
+
+            .error-content {
+                max-width: 700px;
+            }
+
+            .brand {
+                margin-bottom: 40px;
+            }
+
+            .error-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .error-image {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .error-image img {
+                height: 350px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="error-page">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="error-content">
+
+            <div class="brand">
+                WedVista
+            </div>
+
+            <span class="error-tag">
+                FEATURE COMING SOON
+            </span>
+
+            <h1>
+                Backend is<br>
+                not available!
+            </h1>
+
+            <p>
+                This feature is currently unavailable because
+                the backend has not been integrated yet.
+                Once the backend is ready, this feature will
+                be available here.
+            </p>
+
+            <a href="index.html" class="back-btn">
+                Back to Home
+            </a>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE -->
+
+        <div class="error-image">
+
+            <span class="image-label">
+                😭 Backend Team
+            </span>
+
+            <img
+                src="images/backend-meme.png"
+                alt="Backend not available"
+            >
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
