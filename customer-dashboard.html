@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard - WedVista</title>
+  <link rel="stylesheet" href="css/customer-dashboard.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="index.html" class="brand">WedVista</a>
+    <div class="nav-user">
+      <span>Kashish Varshney · Customer</span>
+      <a href="login.html" class="logout-btn">Log out</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Your events</h1>
+
+    <!-- Summary -->
+    <section class="summary">
+      <div class="summary-box"><span id="sumEvents">0</span><small>Events</small></div>
+      <div class="summary-box"><span id="sumBudget">₹0</span><small>Total budget</small></div>
+      <div class="summary-box"><span id="sumBooked">₹0</span><small>Booked</small></div>
+      <div class="summary-box"><span id="sumRemaining">₹0</span><small>Remaining</small></div>
+    </section>
+
+    <!-- Create Event Form -->
+    <section class="panel">
+      <h2>Create a new event</h2>
+      <form class="event-form" id="eventForm">
+        <select id="eventType">
+          <option value="Wedding">Wedding</option>
+          <option value="Birthday">Birthday</option>
+          <option value="Corporate">Corporate</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="date" id="eventDate">
+        <input type="text" id="eventLocation" placeholder="Location">
+        <input type="number" id="eventBudget" placeholder="Budget">
+        <input type="number" id="eventGuests" placeholder="Guests">
+        <button type="submit" class="btn-maroon">Add</button>
+      </form>
+      <p class="form-error" id="formError"></p>
+    </section>
+
+    <!-- My Events -->
+    <h3>My events</h3>
+    <div class="filter-row">
+      <select id="filterType">
+        <option value="All">All types</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Birthday">Birthday</option>
+        <option value="Corporate">Corporate</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="text" id="searchLocation" placeholder="Search by location">
+    </div>
+    <div class="card-grid" id="eventList"></div>
+
+    <!-- My Bookings -->
+    <h3>My bookings</h3>
+    <div class="card-grid" id="bookingList"></div>
+
+    <!-- Browse Vendors -->
+    <h3>Browse vendors</h3>
+    <div class="card-grid" id="vendorList"></div>
+  </div>
+
+  <script src="js/customer-dashboard.js"></script>
+</body>
+</html>
