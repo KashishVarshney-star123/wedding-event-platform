@@ -1738,3 +1738,377 @@ html {
     }
 
 }
+
+
+
+
+/* ============================= */
+/* WEDVISTA FAVORITE HEART BUTTON */
+/* ============================= */
+
+.category-image {
+    position: relative;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #6B1F2A;
+    font-size: 27px;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.favorite-btn:hover {
+    transform: scale(1.12);
+    background-color: #6B1F2A;
+    color: white;
+}
+
+.favorite-btn.active {
+    background-color: #6B1F2A;
+    color: white;
+    transform: scale(1.08);
+}
+
+
+
+/* ================================= */
+/* WEDVISTA MY FAVORITES SECTION */
+/* ================================= */
+
+.my-favorites {
+    margin: 60px auto 20px;
+    padding: 35px;
+    max-width: 1100px;
+    background: #FBF6EE;
+    border: 1px solid #E8D5A8;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(107, 31, 42, 0.07);
+}
+
+.my-favorites h2 {
+    color: #6B1F2A;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.my-favorites > p {
+    color: #707070;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.favorite-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.favorite-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: white;
+    color: #6B1F2A;
+    border: 1px solid #E8D5A8;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.favorite-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(107, 31, 42, 0.12);
+}
+
+
+/* FAVORITE BUTTON POSITION IN SERVICE CARDS */
+
+.service-card {
+    position: relative;
+}
+
+.service-card .favorite-btn {
+    top: 15px;
+    right: 15px;
+}
+
+
+
+/* FIX SERVICE CARD FAVORITE BUTTON POSITION */
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Remove old decorative icon that overlaps the heart */
+.service-card .service-icon {
+    display: none;
+}
+
+/* Proper favorite button position */
+.service-card .favorite-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 38px;
+    height: 38px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E8D5A8;
+    border-radius: 50%;
+    background: white;
+    color: #6B1F2A;
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+}
+
+.service-card .favorite-btn:hover {
+    background: #6B1F2A;
+    color: white;
+    transform: scale(1.1);
+}
+
+.service-card .favorite-btn.active {
+    background: #6B1F2A;
+    color: white;
+}
+
+
+
+/* NEW EVENT CATEGORY IMAGES */
+
+.anniversary {
+    background-image: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80");
+}
+
+.baby-shower {
+    background-image: url("https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=700&q=80");
+}
+
+
+.graduation {
+    background-image: url("https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=700&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.farewell {
+    background-image: url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=80");
+}
+
+
+/* ===================================== */
+/* WEDVISTA SMART FAVORITES DESIGN */
+/* ===================================== */
+
+.my-favorites {
+    margin: 60px auto 30px;
+    padding: 45px 35px;
+    max-width: 1100px;
+    background: #FBF6EE;
+    border: 1px solid #E8D5A8;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(107, 31, 42, 0.07);
+}
+
+.my-favorites h2 {
+    color: #6B1F2A;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.favorite-description {
+    color: #707070;
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+.favorite-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+#favorite-search {
+    width: 100%;
+    max-width: 420px;
+    padding: 13px 18px;
+    border: 1px solid #E8D5A8;
+    border-radius: 30px;
+    background: white;
+    color: #292929;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+#favorite-search:focus {
+    border-color: #6B1F2A;
+    box-shadow: 0 0 0 3px rgba(107, 31, 42, 0.10);
+}
+
+.favorite-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 10px 23px;
+    border: 1px solid #6B1F2A;
+    border-radius: 25px;
+    background: white;
+    color: #6B1F2A;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #6B1F2A;
+    color: white;
+}
+
+#remove-all-favorites {
+    padding: 10px 22px;
+    border: 1px solid #6B1F2A;
+    border-radius: 25px;
+    background: transparent;
+    color: #6B1F2A;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#remove-all-favorites:hover {
+    background: #6B1F2A;
+    color: white;
+}
+
+.favorite-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.favorite-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px 12px 20px;
+    background: white;
+    color: #6B1F2A;
+    border: 1px solid #E8D5A8;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.favorite-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(107, 31, 42, 0.10);
+}
+
+.remove-favorite {
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    background: #F3E7DC;
+    color: #6B1F2A;
+    font-size: 19px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.remove-favorite:hover {
+    background: #6B1F2A;
+    color: white;
+}
+
+#favorite-results {
+    color: #707070;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* TOAST NOTIFICATION */
+
+.favorite-toast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+    padding: 15px 24px;
+    border-radius: 10px;
+    background: #6B1F2A;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.3s ease;
+}
+
+.favorite-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+    .my-favorites {
+        padding: 30px 18px;
+    }
+
+    .my-favorites h2 {
+        font-size: 25px;
+    }
+
+    #favorite-search {
+        max-width: 100%;
+    }
+
+    .favorite-toast {
+        right: 15px;
+        left: 15px;
+        bottom: 15px;
+        text-align: center;
+    }
+}
