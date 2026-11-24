@@ -10,72 +10,66 @@
 
   <!-- Navbar -->
   <header class="navbar">
-    <div class="brand">WedVista</div>
+    <a href="index.html" class="brand">WedVista</a>
     <div class="nav-user">
-      <span>Customer-dashboard</span>
-      <button class="logout-btn">Log out</button>
+      <span>Kashish Varshney · Customer</span>
+      <a href="login.html" class="logout-btn">Log out</a>
     </div>
   </header>
 
   <div class="container">
     <h1>Your events</h1>
 
+    <!-- Summary -->
+    <section class="summary">
+      <div class="summary-box"><span id="sumEvents">0</span><small>Events</small></div>
+      <div class="summary-box"><span id="sumBudget">₹0</span><small>Total budget</small></div>
+      <div class="summary-box"><span id="sumBooked">₹0</span><small>Booked</small></div>
+      <div class="summary-box"><span id="sumRemaining">₹0</span><small>Remaining</small></div>
+    </section>
+
     <!-- Create Event Form -->
     <section class="panel">
       <h2>Create a new event</h2>
-      <form class="event-form">
-        <select>
-          <option>Wedding</option>
-          <option>Birthday</option>
-          <option>Corporate</option>
-          <option>Other</option>
+      <form class="event-form" id="eventForm">
+        <select id="eventType">
+          <option value="Wedding">Wedding</option>
+          <option value="Birthday">Birthday</option>
+          <option value="Corporate">Corporate</option>
+          <option value="Other">Other</option>
         </select>
-        <input type="date">
-        <input type="text" placeholder="Location">
-        <input type="number" placeholder="Budget">
-        <input type="number" placeholder="Guests">
+        <input type="date" id="eventDate">
+        <input type="text" id="eventLocation" placeholder="Location">
+        <input type="number" id="eventBudget" placeholder="Budget">
+        <input type="number" id="eventGuests" placeholder="Guests">
         <button type="submit" class="btn-maroon">Add</button>
       </form>
+      <p class="form-error" id="formError"></p>
     </section>
 
     <!-- My Events -->
     <h3>My events</h3>
-    <div class="card-grid">
-      <div class="panel-card">
-        <strong>Wedding</strong>
-        <p class="muted">04/09/2026</p>
-        <p>Budget: ₹300000</p>
-      </div>
+    <div class="filter-row">
+      <select id="filterType">
+        <option value="All">All types</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Birthday">Birthday</option>
+        <option value="Corporate">Corporate</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="text" id="searchLocation" placeholder="Search by location">
     </div>
+    <div class="card-grid" id="eventList"></div>
 
     <!-- My Bookings -->
     <h3>My bookings</h3>
-    <div class="card-grid">
-      <div class="panel-card">
-        <strong>Elegant Events Catering</strong>
-        <p class="muted">caterer</p>
-        <span class="badge badge-pending">pending</span>
-        <p>₹40000</p>
-      </div>
-    </div>
+    <div class="card-grid" id="bookingList"></div>
 
     <!-- Browse Vendors -->
     <h3>Browse vendors</h3>
-    <div class="card-grid">
-      <div class="vendor-card">
-        <h4>Royal Photography Studio</h4>
-        <p class="muted">Photographer · Agra</p>
-        <p>5 ★</p>
-        <button class="btn-maroon">Book now</button>
-      </div>
-      <div class="vendor-card">
-        <h4>Elegant Events Catering</h4>
-        <p class="muted">Caterer · Agra</p>
-        <p>0 ★</p>
-        <button class="btn-maroon">Book now</button>
-      </div>
-    </div>
+    <div class="card-grid" id="vendorList"></div>
   </div>
 
+  <script src="js/customer-dashboard.js"></script>
 </body>
 </html>
