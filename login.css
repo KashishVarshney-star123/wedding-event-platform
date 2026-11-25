@@ -616,3 +616,22 @@ footer {
     }
 
 }
+.form-message {
+  min-height: 18px;
+  font-size: 13px;
+  margin-top: 14px;
+}
+.form-message.error { color: #A33B3B; }
+.form-message.success { color: #3F6644; }
+
+.switch-link {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #6B5F58;
+}
+.switch-link a {
+  color: #6B1F2A;
+  font-weight: 600;
+  text-decoration: none;
+}
