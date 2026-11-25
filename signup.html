@@ -1,203 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sign Up | WedVista</title>
-
-    <link rel="stylesheet" href="signup.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WedVista — Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
 </head>
-
 <body>
 
+  <main class="page">
 
-    <!-- Navigation -->
+    <div class="circle one"></div>
+    <div class="circle two"></div>
 
-    <nav class="navbar">
+    <div class="auth-card">
 
-        <div class="nav-container">
+      <section class="hero">
+        <div class="brand">WedVista</div>
 
-            <a href="index.html" class="logo">
-                WedVista
-            </a>
+        <div class="hero-content">
+          <div class="small-text">Your wedding, beautifully planned</div>
+          <h1>Begin your<br>forever.</h1>
+          <p>Plan, organize and celebrate every beautiful moment of your wedding — all in one place.</p>
+          <div class="heart">&hearts;</div>
+        </div>
+      </section>
 
+      <section class="form-section">
 
-            <div class="nav-links">
-
-                <a href="index.html">Home</a>
-
-                <a href="#">Services</a>
-
-                <a href="#">About</a>
-
-                <a href="#">Contact</a>
-
-            </div>
-
-
-            <div class="nav-right">
-
-                <span>
-                    Already have an account?
-                </span>
-
-                <a href="login.html" class="login-link">
-                    Login
-                </a>
-
-            </div>
-
+        <div class="form-header">
+          <h2>Create your account</h2>
+          <p>Start planning your dream wedding with us.</p>
         </div>
 
-    </nav>
-
-
-    <!-- Signup -->
-
-    <main class="signup-section">
-
-        <div class="signup-card">
-
-
-            <div class="signup-heading">
-
-                <p class="small-heading">
-                    JOIN WEDVISTA
-                </p>
-
-                <h1>
-                    Create Your Account
-                </h1>
-
-                <p>
-                    Start planning your perfect event with WedVista.
-                </p>
-
+        <form class="form" id="registerForm">
+          <div class="input-group">
+            <label>Full Name</label>
+            <div class="input-wrapper">
+              <span>&#9786;</span>
+              <input type="text" id="signupName" placeholder="Your full name" required>
             </div>
+          </div>
 
-
-            <form>
-
-
-                <div class="form-group">
-
-                    <label for="name">
-                        Full Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Enter your full name"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="email">
-                        Email Address
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Enter your email address"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="password">
-                        Password
-                    </label>
-
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Create a password"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="confirm-password">
-                        Confirm Password
-                    </label>
-
-                    <input
-                        type="password"
-                        id="confirm-password"
-                        placeholder="Confirm your password"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="terms">
-
-                    <label>
-
-                        <input type="checkbox" required>
-
-                        I agree to the terms and conditions.
-
-                    </label>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="signup-button">
-
-                    Create Account
-
-                </button>
-
-
-            </form>
-
-
-            <div class="bottom-login">
-
-                <p>
-                    Already have an account?
-                </p>
-
-                <a href="login.html">
-                    Login to WedVista
-                </a>
-
+          <div class="input-group">
+            <label>Email Address</label>
+            <div class="input-wrapper">
+              <span>&#9993;</span>
+              <input type="email" id="signupEmail" placeholder="you@example.com" required>
             </div>
+          </div>
 
+          <div class="input-group">
+            <label>Password</label>
+            <div class="input-wrapper">
+              <span>&#9679;</span>
+              <input type="password" id="signupPassword" placeholder="Create a password (min 6 characters)" required>
+            </div>
+          </div>
 
-        </div>
+          <div class="input-group">
+            <label>I am a</label>
+            <select class="role-select" id="signupRole">
+              <option value="customer">Customer</option>
+              <option value="vendor">Vendor</option>
+            </select>
+          </div>
 
-    </main>
+          <p class="form-message" id="signupMessage"></p>
+          <button class="submit-btn" type="submit">Create Account</button>
 
+          <p class="terms">
+            By creating an account, you agree to our
+            <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+          </p>
+        </form>
 
-    <footer>
+        <p class="switch-link">Already have an account? <a href="login.html">Log in</a></p>
 
-        © 2026 WedVista. All rights reserved.
+      </section>
 
-    </footer>
+    </div>
+  </main>
 
-
+  <script src="js/signup.js"></script>
 </body>
-
 </html>
