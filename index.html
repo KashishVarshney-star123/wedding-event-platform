@@ -24,8 +24,8 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="vendors.html">Vendors</a></li>
+<li><a href="#contact-section">Contact</a></li>
+     <li><a href="vendors.html">Vendors</a></li>
     </ul>
 
     <div class="nav-buttons">
@@ -106,6 +106,13 @@
     <div class="service-container">
 
         <div class="service-card">
+
+            <button type="button"
+        class="favorite-btn"
+        data-favorite="Venue Planning"
+        aria-label="Add Venue Planning to favorites"
+        aria-pressed="false">♡</button>
+
             <div class="service-top">
                 <span class="service-number">01</span>
                 <span class="service-icon">⌂</span>
@@ -123,6 +130,13 @@
 
 
         <div class="service-card">
+
+            <button type="button"
+        class="favorite-btn"
+        data-favorite="Vendor Management"
+        aria-label="Add Vendor Management to favorites"
+        aria-pressed="false">♡</button>
+
             <div class="service-top">
                 <span class="service-number">02</span>
                 <span class="service-icon">✦</span>
@@ -140,6 +154,13 @@
 
 
         <div class="service-card">
+
+            <button type="button"
+        class="favorite-btn"
+        data-favorite="Guest Management"
+        aria-label="Add Guest Management to favorites"
+        aria-pressed="false">♡</button>
+
             <div class="service-top">
                 <span class="service-number">03</span>
                 <span class="service-icon">♧</span>
@@ -157,6 +178,13 @@
 
 
         <div class="service-card">
+
+            <button type="button"
+        class="favorite-btn"
+        data-favorite="Budget Planning"
+        aria-label="Add Budget Planning to favorites"
+        aria-pressed="false">♡</button>
+
             <div class="service-top">
                 <span class="service-number">04</span>
                 <span class="service-icon">₹</span>
@@ -394,8 +422,12 @@
 
         <div class="category-card">
             <div class="category-image wedding">
-                <span>WEDDING</span>
-            </div>
+    <span>WEDDING</span>
+    <button type="button" class="favorite-btn"
+        data-favorite="Weddings"
+        aria-label="Add Weddings to favorites"
+        aria-pressed="false">♡</button>
+</div>
 
             <div class="category-content">
                 <h3>Weddings</h3>
@@ -410,8 +442,12 @@
 
         <div class="category-card">
             <div class="category-image birthday">
-                <span>BIRTHDAY</span>
-            </div>
+    <span>BIRTHDAY</span>
+    <button type="button" class="favorite-btn"
+        data-favorite="Birthdays"
+        aria-label="Add Birthdays to favorites"
+        aria-pressed="false">♡</button>
+</div>
 
             <div class="category-content">
                 <h3>Birthdays</h3>
@@ -426,8 +462,12 @@
 
         <div class="category-card">
             <div class="category-image engagement">
-                <span>ENGAGEMENT</span>
-            </div>
+    <span>ENGAGEMENT</span>
+    <button type="button" class="favorite-btn"
+        data-favorite="Engagements"
+        aria-label="Add Engagements to favorites"
+        aria-pressed="false">♡</button>
+</div>
 
             <div class="category-content">
                 <h3>Engagements</h3>
@@ -442,8 +482,12 @@
 
         <div class="category-card">
             <div class="category-image corporate">
-                <span>CORPORATE</span>
-            </div>
+    <span>CORPORATE</span>
+    <button type="button" class="favorite-btn"
+        data-favorite="Corporate Events"
+        aria-label="Add Corporate Events to favorites"
+        aria-pressed="false">♡</button>
+</div>
 
             <div class="category-content">
                 <h3>Corporate Events</h3>
@@ -454,6 +498,80 @@
                 <a href="#">Plan a Corporate Event →</a>
             </div>
         </div>
+
+
+<!-- ANNIVERSARY CARD -->
+<div class="category-card">
+    <button type="button" class="favorite-btn"
+        data-favorite="Anniversary"
+        aria-label="Add Anniversary to favorites"
+        aria-pressed="false">♡</button>
+
+    <div class="category-image anniversary">
+        <span>ANNIVERSARY</span>
+    </div>
+
+    <div class="category-content">
+        <h3>Anniversaries</h3>
+        <p>Celebrate your special milestones with beautiful arrangements.</p>
+        <a href="#">Plan an Anniversary →</a>
+    </div>
+</div>
+
+<!-- BABY SHOWER CARD -->
+<div class="category-card">
+    <button type="button" class="favorite-btn"
+        data-favorite="Baby Shower"
+        aria-label="Add Baby Shower to favorites"
+        aria-pressed="false">♡</button>
+
+    <div class="category-image baby-shower">
+        <span>BABY SHOWER</span>
+    </div>
+
+    <div class="category-content">
+        <h3>Baby Showers</h3>
+        <p>Organize a joyful celebration for a beautiful new beginning.</p>
+        <a href="#">Plan a Baby Shower →</a>
+    </div>
+</div>
+
+<!-- GRADUATION CARD -->
+<div class="category-card">
+    <button type="button" class="favorite-btn"
+        data-favorite="Graduation"
+        aria-label="Add Graduation to favorites"
+        aria-pressed="false">♡</button>
+
+    <div class="category-image graduation">
+        <span>GRADUATION</span>
+    </div>
+
+    <div class="category-content">
+        <h3>Graduations</h3>
+        <p>Celebrate achievements and unforgettable academic moments.</p>
+        <a href="#">Plan a Graduation →</a>
+    </div>
+</div>
+
+<!-- FAREWELL CARD -->
+<div class="category-card">
+    <button type="button" class="favorite-btn"
+        data-favorite="Farewell"
+        aria-label="Add Farewell to favorites"
+        aria-pressed="false">♡</button>
+
+    <div class="category-image farewell">
+        <span>FAREWELL</span>
+    </div>
+
+    <div class="category-content">
+        <h3>Farewell Parties</h3>
+        <p>Make every goodbye special with a memorable celebration.</p>
+        <a href="#">Plan a Farewell →</a>
+    </div>
+</div>
+
 
     </div>
 
@@ -570,6 +688,50 @@
 
 </section>
 
+<!-- ============================= -->
+<!-- CONTACT SECTION -->
+<!-- ============================= -->
+
+<section class="contact-section" id="contact-section">
+
+    <div class="contact-content">
+
+        <span>GET IN TOUCH</span>
+
+        <h2>Let’s Plan Something Beautiful</h2>
+
+        <p>
+            Have questions about planning your event?
+            We’re here to help you create a celebration
+            worth remembering.
+        </p>
+-
+        <div class="contact-details">
+
+            <div class="contact-item">
+
+                <h3>Email</h3>
+
+                <p>support@wedvista.com</p>
+
+            </div>
+
+            <div class="contact-item">
+
+                <h3>Support</h3>
+
+                <p>
+                    We’re here to help with your event planning.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 <footer class="footer">
 
     <div class="footer-content">
@@ -603,5 +765,6 @@
     </div>
 
 </footer>
+<script src="script.js"></script>
 </body>
 </html>
