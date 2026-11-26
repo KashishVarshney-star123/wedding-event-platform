@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update all heart buttons
     function updateHearts() {
 
-        favoriteButtons.forEach(function (button) {
+        favoriteButtons.forEach(function (button) {          
 
             const name = button.dataset.favorite;
             const isFavorite = favorites.includes(name);
