@@ -1,14 +1,35 @@
-let currentUser = JSON.parse(localStorage.getItem('wvCurrentUser'));
+// Check multiple possible keys used by login/signup
+const possibleKeys = ['wvCurrentUser', 'currentUser', 'loggedInUser', 'user', 'wedvistaUser'];
+let currentUser = null;
 
-// Agar login se data nahi aaya toh default customer set kar do
-if (!currentUser || currentUser.role !== 'customer') {
-  currentUser = { name: 'Kashish', role: 'customer' };
-  localStorage.setItem('wvCurrentUser', JSON.stringify(currentUser));
+for (const key of possibleKeys) {
+  const data = localStorage.getItem(key);
+  if (data) {
+    try {
+      const parsed = JSON.parse(data);
+      if (parsed && typeof parsed === 'object') {
+        currentUser = parsed;
+        break;
+      }
+    } catch (e) {}
+  }
 }
 
-document.getElementById('userName').textContent = currentUser.name + ' · Customer';
+// Fallback sirf tab jab koi bhi user logged-in na ho
+if (!currentUser) {
+  currentUser = { name: 'Guest User', role: 'customer' };
+}
 
-// Logout: remove the saved session
+// Name extract karo (chahe name, fullName, username, ya email se save hua ho)
+const displayName =
+  currentUser.name ||
+  currentUser.fullName ||
+  currentUser.username ||
+  (currentUser.email ? currentUser.email.split('@')[0] : 'Customer');
+
+document.getElementById('userName').textContent = displayName + ' · Customer';
+
+// Logout: saare possible session keys clear karo
 document.getElementById('logoutBtn').addEventListener('click', function () {
-  localStorage.removeItem('wvCurrentUser');
+  possibleKeys.forEach((key) => localStorage.removeItem(key));
 });
