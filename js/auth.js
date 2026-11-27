@@ -1,35 +1,37 @@
-// Check multiple possible keys used by login/signup
-const possibleKeys = ['wvCurrentUser', 'currentUser', 'loggedInUser', 'user', 'wedvistaUser'];
 let currentUser = null;
 
-for (const key of possibleKeys) {
-  const data = localStorage.getItem(key);
-  if (data) {
+// localStorage aur sessionStorage ki saari keys check karo
+[sessionStorage, localStorage].forEach((storage) => {
+  if (currentUser) return;
+  for (let i = 0; i < storage.length; i++) {
+    const key = storage.key(i);
+    // Events, bookings, aur registered users list ko skip karo
+    if (key === 'wvEvents' || key === 'wvBookings' || key.toLowerCase().includes('users')) continue;
     try {
-      const parsed = JSON.parse(data);
-      if (parsed && typeof parsed === 'object') {
-        currentUser = parsed;
-        break;
+      const parsed = JSON.parse(storage.getItem(key));
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+        if (parsed.name || parsed.fullName || parsed.email) {
+          currentUser = parsed;
+          break;
+        }
       }
     } catch (e) {}
   }
-}
+});
 
-// Fallback sirf tab jab koi bhi user logged-in na ho
-if (!currentUser) {
-  currentUser = { name: 'Guest User', role: 'customer' };
-}
-
-// Name extract karo (chahe name, fullName, username, ya email se save hua ho)
-const displayName =
-  currentUser.name ||
-  currentUser.fullName ||
-  currentUser.username ||
-  (currentUser.email ? currentUser.email.split('@')[0] : 'Customer');
+const displayName = currentUser
+  ? (currentUser.name || currentUser.fullName || currentUser.email.split('@')[0])
+  : 'Guest User';
 
 document.getElementById('userName').textContent = displayName + ' · Customer';
 
-// Logout: saare possible session keys clear karo
+// Logout: sirf session keys clear karo (registered accounts delete mat karna!)
 document.getElementById('logoutBtn').addEventListener('click', function () {
-  possibleKeys.forEach((key) => localStorage.removeItem(key));
+  sessionStorage.clear();
+  for (let i = localStorage.length - 1; i >= 0; i--) {
+    const key = localStorage.key(i);
+    if (key.toLowerCase().includes('session') || key.toLowerCase().includes('current')) {
+      localStorage.removeItem(key);
+    }
+  }
 });
