@@ -1,7 +1,7 @@
 
 "use strict";
 
-// Vendor data
+// Vendor Data
 const vendors = [
     {
         id: 1,
@@ -59,129 +59,171 @@ const vendors = [
     }
 ];
 
-// Select HTML elements
-const categoryInput = document.getElementById("category");
-const locationInput = document.getElementById("location");
-const minBudgetInput = document.getElementById("minBudget");
-const maxBudgetInput = document.getElementById("maxBudget");
+// Wait until HTML is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
 
-const searchBtn = document.getElementById("searchBtn");
-const resetBtn = document.getElementById("resetBtn");
-const vendorGrid = document.getElementById("vendorGrid");
+    // Select HTML elements
+    const categoryInput = document.getElementById("category");
+    const locationInput = document.getElementById("location");
+    const minBudgetInput = document.getElementById("minBudget");
+    const maxBudgetInput = document.getElementById("maxBudget");
 
-// Display vendor cards dynamically
-function displayVendors(vendorList) {
+    const searchBtn = document.getElementById("searchBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const vendorGrid = document.getElementById("vendorGrid");
 
-    vendorGrid.innerHTML = "";
-
-    if (vendorList.length === 0) {
-        vendorGrid.innerHTML = `
-            <p class="no-results">
-                No vendors found. Try different filters!
-            </p>
-        `;
+    // Check whether all HTML elements exist
+    if (
+        !categoryInput ||
+        !locationInput ||
+        !minBudgetInput ||
+        !maxBudgetInput ||
+        !searchBtn ||
+        !resetBtn ||
+        !vendorGrid
+    ) {
+        console.error("Error: HTML elements not found. Check your IDs.");
         return;
     }
 
-    vendorList.forEach(vendor => {
+    console.log("WedVista JavaScript connected successfully!");
 
-        const vendorCard = document.createElement("div");
+    // Display vendor cards
+    function displayVendors(vendorList) {
 
-        vendorCard.className = "vendor-card";
+        vendorGrid.innerHTML = "";
 
-        vendorCard.innerHTML = `
-            <span class="tag">${vendor.category}</span>
+        if (vendorList.length === 0) {
+            vendorGrid.innerHTML = `
+                <p class="no-results">
+                    No vendors found. Try different filters!
+                </p>
+            `;
+            return;
+        }
 
-            <h3>${vendor.name}</h3>
+        vendorList.forEach(function (vendor) {
 
-            <p class="muted">${vendor.location}</p>
+            const card = document.createElement("div");
 
-            <p class="price">
-                ₹${vendor.minPrice.toLocaleString("en-IN")}
-                – ₹${vendor.maxPrice.toLocaleString("en-IN")}
-            </p>
+            card.className = "vendor-card";
 
-            <p class="rating">${vendor.rating} ★</p>
+            card.innerHTML = `
+                <span class="tag">${vendor.category}</span>
 
-            <button class="btn-maroon"
-                onclick="viewDetails(${vendor.id})">
-                View details
-            </button>
-        `;
+                <h3>${vendor.name}</h3>
 
-        vendorGrid.appendChild(vendorCard);
-    });
-}
+                <p class="muted">${vendor.location}</p>
 
-// Filter vendors
-function filterVendors() {
+                <p class="price">
+                    ₹${vendor.minPrice.toLocaleString("en-IN")}
+                    - ₹${vendor.maxPrice.toLocaleString("en-IN")}
+                </p>
 
-    const selectedCategory = categoryInput.value;
-    const searchLocation = locationInput.value.trim().toLowerCase();
+                <p class="rating">${vendor.rating} ★</p>
 
-    const minBudget = minBudgetInput.value === ""
-        ? 0
-        : Number(minBudgetInput.value);
+                <button type="button"
+                    class="btn-maroon details-btn"
+                    data-id="${vendor.id}">
+                    View details
+                </button>
+            `;
 
-    const maxBudget = maxBudgetInput.value === ""
-        ? Infinity
-        : Number(maxBudgetInput.value);
-
-    if (minBudget < 0 || maxBudget < 0 || minBudget > maxBudget) {
-        alert("Please enter a valid budget range.");
-        return;
+            vendorGrid.appendChild(card);
+        });
     }
 
-    const filteredVendors = vendors.filter(vendor => {
+    // Filter vendors
+    function filterVendors() {
 
-        const categoryMatch =
-            selectedCategory === "All" ||
-            vendor.category === selectedCategory;
+        const category = categoryInput.value;
+        const location = locationInput.value.trim().toLowerCase();
 
-        const locationMatch =
-            vendor.location.toLowerCase().includes(searchLocation);
+        const minBudget = minBudgetInput.value === ""
+            ? 0
+            : Number(minBudgetInput.value);
 
-        // Check whether vendor's price range overlaps
-        // with the user's selected budget range
-        const budgetMatch =
-            vendor.maxPrice >= minBudget &&
-            vendor.minPrice <= maxBudget;
+        const maxBudget = maxBudgetInput.value === ""
+            ? Infinity
+            : Number(maxBudgetInput.value);
 
-        return categoryMatch && locationMatch && budgetMatch;
+        // Validate budget
+        if (
+            !Number.isFinite(minBudget) ||
+            minBudget < 0 ||
+            maxBudget < 0 ||
+            minBudget > maxBudget
+        ) {
+            alert("Please enter a valid budget range.");
+            return;
+        }
+
+        // Apply all filters
+        const filteredVendors = vendors.filter(function (vendor) {
+
+            const categoryMatch =
+                category === "All" ||
+                vendor.category.toLowerCase() === category.toLowerCase();
+
+            const locationMatch =
+                location === "" ||
+                vendor.location.toLowerCase().includes(location);
+
+            // Check budget range overlap
+            const budgetMatch =
+                vendor.maxPrice >= minBudget &&
+                vendor.minPrice <= maxBudget;
+
+            return categoryMatch && locationMatch && budgetMatch;
+        });
+
+        console.log("Filtered vendors:", filteredVendors);
+
+        displayVendors(filteredVendors);
+    }
+
+    // View vendor details using event delegation
+    vendorGrid.addEventListener("click", function (event) {
+
+        const button = event.target.closest(".details-btn");
+
+        if (!button) return;
+
+        const vendorId = Number(button.dataset.id);
+
+        const vendor = vendors.find(function (item) {
+            return item.id === vendorId;
+        });
+
+        if (vendor) {
+            alert(
+                "Vendor: " + vendor.name +
+                "\nCategory: " + vendor.category +
+                "\nLocation: " + vendor.location +
+                "\nPrice: ₹" + vendor.minPrice.toLocaleString("en-IN") +
+                " - ₹" + vendor.maxPrice.toLocaleString("en-IN") +
+                "\nRating: " + vendor.rating + " ★"
+            );
+        }
     });
 
-    displayVendors(filteredVendors);
-}
+    // Search button
+    searchBtn.addEventListener("click", filterVendors);
 
-// View vendor details
-function viewDetails(vendorId) {
+    // Reset button
+    resetBtn.addEventListener("click", function () {
 
-    const vendor = vendors.find(v => v.id === vendorId);
+        categoryInput.value = "All";
+        locationInput.value = "";
+        minBudgetInput.value = "";
+        maxBudgetInput.value = "";
 
-    if (vendor) {
-        alert(
-            `Vendor: ${vendor.name}\n` +
-            `Category: ${vendor.category}\n` +
-            `Location: ${vendor.location}\n` +
-            `Price: ₹${vendor.minPrice} - ₹${vendor.maxPrice}\n` +
-            `Rating: ${vendor.rating} ★`
-        );
-    }
-}
+        displayVendors(vendors);
 
-// Search button
-searchBtn.addEventListener("click", filterVendors);
+        console.log("All filters reset!");
+    });
 
-// Reset filters
-resetBtn.addEventListener("click", () => {
-
-    categoryInput.value = "All";
-    locationInput.value = "";
-    minBudgetInput.value = "";
-    maxBudgetInput.value = "";
-
+    // Show all vendors initially
     displayVendors(vendors);
-});
 
-// Initial vendor display
-displayVendors(vendors);
+});
