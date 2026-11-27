@@ -102,6 +102,12 @@ a { text-decoration: none; }
   font-family: 'Work Sans', sans-serif;
 }
 
+.filter-bar select:focus,
+.filter-bar input:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
 .btn-maroon {
   background: var(--maroon);
   color: var(--ivory);
@@ -117,10 +123,18 @@ a { text-decoration: none; }
   background: var(--maroon-dark);
 }
 
+.btn-gray {
+  background: #555;
+}
+
+.btn-gray:hover {
+  background: #3a3a3a;
+}
+
 /* Vendor Grid */
 .vendor-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
 }
 
@@ -169,6 +183,13 @@ a { text-decoration: none; }
   width: 100%;
 }
 
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--ink-soft);
+  padding: 40px 0;
+}
+
 /* Footer */
 .footer {
   background: var(--maroon-dark);
@@ -181,4 +202,5 @@ a { text-decoration: none; }
 
 @media (max-width: 600px) {
   .filter-bar { flex-direction: column; }
+  .navbar { padding: 14px 20px; }
 }
