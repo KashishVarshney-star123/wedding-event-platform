@@ -12,11 +12,11 @@
 
   <!-- Navbar -->
   <header class="navbar">
-    <a href="home.html" class="brand">WedVista</a>
+    <a href="index.html" class="brand">WedVista</a>
     <nav class="nav-links">
-      <a href="home.html">Home</a>
-      <a href="login-signup.html">Login</a>
-      <a href="login-signup.html" class="nav-cta">Sign Up</a>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="nav-cta">Sign Up</a>
     </nav>
   </header>
 
@@ -26,84 +26,30 @@
 
     <!-- Filter bar -->
     <div class="filter-bar">
-      <select>
-        <option>All categories</option>
-        <option>Photographer</option>
-        <option>Caterer</option>
-        <option>Decorator</option>
-        <option>Venue</option>
-        <option>DJ</option>
-        <option>Makeup</option>
+      <select id="category">
+        <option value="All">All categories</option>
+        <option value="Photographer">Photographer</option>
+        <option value="Caterer">Caterer</option>
+        <option value="Decorator">Decorator</option>
+        <option value="Venue">Venue</option>
+        <option value="DJ">DJ</option>
+        <option value="Makeup">Makeup</option>
       </select>
-      <input type="text" placeholder="Location">
-      <input type="number" placeholder="Min budget">
-      <input type="number" placeholder="Max budget">
-      <button class="btn-maroon">Search</button>
+      <input type="text" id="location" placeholder="Location">
+      <input type="number" id="minBudget" placeholder="Min budget">
+      <input type="number" id="maxBudget" placeholder="Max budget">
+      <button type="button" id="searchBtn" class="btn-maroon">Search</button>
+      <button type="button" id="resetBtn" class="btn-maroon" style="background:#555;">Reset</button>
     </div>
 
-    <!-- Vendor Grid -->
-    <div class="vendor-grid">
-
-      <div class="vendor-card">
-        <span class="tag">Photographer</span>
-        <h3>Royal Photography Studio</h3>
-        <p class="muted">Agra</p>
-        <p class="price">₹20,000 – ₹80,000</p>
-        <p class="rating">5.0 ★</p>
-        <button class="btn-maroon">View details</button>
-      </div>
-
-      <div class="vendor-card">
-        <span class="tag">Caterer</span>
-        <h3>Elegant Events Catering</h3>
-        <p class="muted">Agra</p>
-        <p class="price">₹150 – ₹600 / plate</p>
-        <p class="rating">4.5 ★</p>
-        <button class="btn-maroon">View details</button>
-      </div>
-
-      <div class="vendor-card">
-        <span class="tag">Decorator</span>
-        <h3>Dream Decor &amp; Florals</h3>
-        <p class="muted">Mathura</p>
-        <p class="price">₹30,000 – ₹1,20,000</p>
-        <p class="rating">4.8 ★</p>
-        <button class="btn-maroon">View details</button>
-      </div>
-
-      <div class="vendor-card">
-        <span class="tag">Venue</span>
-        <h3>Grand Palace Banquet</h3>
-        <p class="muted">Agra</p>
-        <p class="price">₹2,00,000 – ₹5,00,000</p>
-        <p class="rating">4.6 ★</p>
-        <button class="btn-maroon">View details</button>
-      </div>
-
-      <div class="vendor-card">
-        <span class="tag">DJ</span>
-        <h3>Beats &amp; Beyond</h3>
-        <p class="muted">Mathura</p>
-        <p class="price">₹15,000 – ₹40,000</p>
-        <p class="rating">4.3 ★</p>
-        <button class="btn-maroon">View details</button>
-      </div>
-
-      <div class="vendor-card">
-        <span class="tag">Makeup</span>
-        <h3>Glow Studio</h3>
-        <p class="muted">Agra</p>
-        <p class="price">₹8,000 – ₹35,000</p>
-        <p class="rating">4.9 ★</p>
-        <button class="btn-maroon">View details</button>
-      </div>
-
-    </div>
+    <!-- Vendor Grid (Populated dynamically by filter.js) -->
+    <div class="vendor-grid" id="vendorGrid"></div>
   </div>
 
   <footer class="footer">
-    <p>&copy; 2026 Vivaha. Wedding &amp; Event Planning Management Platform.</p>
+    <p>© 2026 WedVista. Wedding & Event Planning Management Platform.</p>
   </footer>
+
   <script src="filter.js"></script>
 </body>
 </html>
